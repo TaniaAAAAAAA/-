@@ -1,0 +1,58 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#include <math.h>
+#include <stdlib.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+        : TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+Edit1->Clear();
+Edit2->Clear();
+Edit3->Clear();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+Close();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{ float r,r1,r2;
+
+  r1=StrToFloat(Edit1->Text);
+  r2=StrToFloat(Edit2->Text) ;
+
+  r=(r1*r2)/(r1+r2);
+
+  Edit3->Text=FloatToStr(r);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+float r,r1,r2;
+
+ r1=StrToFloat(Edit1->Text);
+ r2=StrToFloat(Edit2->Text);
+
+ r=r1+r2;
+
+ Edit3->Text=FloatToStr(r);
+}
+//---------------------------------------------------------------------------
+
